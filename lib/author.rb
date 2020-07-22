@@ -1,3 +1,5 @@
+require 'pry'
+
 class Author
 attr_reader :first_name, :last_name, :books
 
@@ -11,8 +13,8 @@ attr_reader :first_name, :last_name, :books
     "#{@first_name + " " + @last_name}"
   end
 
-  def write(name, publication)
-    Book.new({author: name, publication: publication})
+  def write(title, publication)
+    Book.new({title: title, publication: publication})
   end
 
 
