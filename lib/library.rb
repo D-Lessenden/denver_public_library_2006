@@ -18,4 +18,12 @@ attr_reader :name, :books, :authors
     end
   end
 
-end
+  def publication_time_frame_for(author)
+    book_timeframe = []
+    author.books.each do |book|
+      book_timeframe << book.publication_year
+      end
+      xyz = book_timeframe.map(&:to_i).sort
+      {start: xyz.first.to_s, end: xyz.last.to_s}
+    end
+  end
