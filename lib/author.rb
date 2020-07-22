@@ -13,9 +13,12 @@ attr_reader :first_name, :last_name, :books
     "#{@first_name + " " + @last_name}"
   end
 
+
   def write(title, publication)
-    Book.new({title: title, publication: publication})
+    Book.new({author_first_name: @first_name, author_last_name: @last_name, title: title, publication_date: publication})
   end
+
+
 
 
 end
