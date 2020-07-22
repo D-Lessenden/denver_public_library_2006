@@ -15,7 +15,15 @@ attr_reader :first_name, :last_name, :books
 
 
   def write(title, publication)
-    Book.new({author_first_name: @first_name, author_last_name: @last_name, title: title, publication_date: publication})
+    book = Book.new({author_first_name: @first_name, author_last_name: @last_name, title: title, publication_date: publication})
+    book_shelf(book)
+    book
+  end
+
+
+
+  def book_shelf(book)
+    @books << book
   end
 
 
